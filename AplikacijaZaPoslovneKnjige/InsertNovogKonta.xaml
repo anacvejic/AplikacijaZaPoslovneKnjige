@@ -1,0 +1,24 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.InsertNovogKonta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Unos novog konta" Height="479.032" Width="386.29" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <TextBlock x:Name="tlbUnosKontaNaslov" HorizontalAlignment="Left" Margin="67,39,0,0" TextWrapping="Wrap" Text="Unos novog konta" VerticalAlignment="Top" FontSize="27" FontWeight="Bold" Foreground="#FF1739F0"/>
+        <TextBlock x:Name="tlbSifraKonta" HorizontalAlignment="Left" Margin="127,112,0,0" TextWrapping="Wrap" Text="Šifra konta:" VerticalAlignment="Top" Height="20" Width="92"/>
+        <TextBox x:Name="textBoxSifraKonta" HorizontalAlignment="Left" Height="23" Margin="112,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tlbOpisKonta" HorizontalAlignment="Left" Margin="127,188,0,0" TextWrapping="Wrap" Text="Opis konta:" VerticalAlignment="Top" Height="20" Width="66"/>
+        <TextBox x:Name="textBoxOpisKonta" HorizontalAlignment="Left" Height="23" Margin="112,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tlbSifraGrupeKonta" HorizontalAlignment="Left" Margin="127,264,0,0" TextWrapping="Wrap" Text="Šifra grupe konta: " VerticalAlignment="Top" Height="21" Width="105"/>
+        <ComboBox x:Name="cmbSifraGrupeKonta" HorizontalAlignment="Left" Margin="112,290,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnUnesiKonto" Content="Unesi konto" HorizontalAlignment="Left" Margin="127,347,0,0" VerticalAlignment="Top" Width="81" Height="32" Background="#FF62EFF1" Click="BtnUnesiKonto_Click"/>
+
+
+
+
+
+    </Grid>
+</Window>

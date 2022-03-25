@@ -1,0 +1,13 @@
+; Field definition file for table: ADORecordset
+VrstaNaloga	number		1.00
+Naziv	string	30	string sample value
+BrojNaloga	string	5	string sample value
+VrstaDokumenta	number		1.00
+DatumNaloga	date		Jan 5, 1994
+Konto	string	8	string sample value
+Opis	string	100	string sample value
+PozivNaBroj	string	25	string sample value
+DatumValute	date		Jan 5, 1994
+Duguje	number		1.00
+Potrazuje	number		1.00
+Komada	number		1.00

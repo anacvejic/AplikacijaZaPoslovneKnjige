@@ -1,0 +1,20 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.Kreiranje_kontnog_okvira"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Kreiranje kontnog okvira" Height="456.265" Width="327.083" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock x:Name="tblGrupaKontaNaslov" HorizontalAlignment="Left" Margin="84,50,0,0" TextWrapping="Wrap" Text="Grupa konta" VerticalAlignment="Top" Foreground="#FF282AF0" FontSize="23" FontWeight="Bold"/>
+        <TextBlock x:Name="tlbNazivKLase" HorizontalAlignment="Left" Margin="121,108,0,0" TextWrapping="Wrap" Text="Naziv klase:" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxNazivKlase" HorizontalAlignment="Left" Height="22" Margin="89,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBlock x:Name="tlbSifrGrupeKonta" HorizontalAlignment="Left" Margin="99,171,0,0" TextWrapping="Wrap" Text="Šifra grupe konta:" VerticalAlignment="Top" Height="18" Width="102"/>
+        <TextBox x:Name="textBoxSifraGrupeKonta" HorizontalAlignment="Left" Height="22" Margin="87,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+        <TextBlock x:Name="tlbNazivGrupeKonta" HorizontalAlignment="Left" Margin="98,242,0,0" TextWrapping="Wrap" Text="Naziv grupe konta:" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxNazivGrupeKonta" HorizontalAlignment="Left" Height="23" Margin="86,266,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="131"/>
+        <Button x:Name="btnGrupaKonta" Content="Unesi grupu konta" HorizontalAlignment="Left" Margin="99,329,0,0" VerticalAlignment="Top" Width="102" Height="24" BorderBrush="#FF4CF4E5" Background="#FFB8F1EE" Click="BtnGrupaKonta_Click"/>
+        
+    </Grid>
+</Window>

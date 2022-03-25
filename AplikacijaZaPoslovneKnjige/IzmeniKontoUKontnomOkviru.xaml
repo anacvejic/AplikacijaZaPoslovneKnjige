@@ -1,0 +1,20 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.IzmeniKontoUKontnomOkviru"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Izmena konta u kontnom okviru" Height="445.504" Width="354.381" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <TextBlock x:Name="tblIzmenaKontaNaslov" HorizontalAlignment="Left" Margin="21,29,0,0" TextWrapping="Wrap" Text="Izmena konta u kontnom okviru" VerticalAlignment="Top" Height="33" Width="311" FontSize="20" FontWeight="Bold" Foreground="#FF212AEA"/>
+        <TextBlock x:Name="tblOpisKonta" HorizontalAlignment="Left" Margin="126,97,0,0" TextWrapping="Wrap" Text="Opis konta:" VerticalAlignment="Top" Height="30" Width="69"/>
+        <TextBox x:Name="textBoxOpisKonta" HorizontalAlignment="Left" Height="36" Margin="85,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
+        <TextBlock x:Name="tblGrupaKonta" HorizontalAlignment="Left" Margin="126,200,0,0" TextWrapping="Wrap" Text="Grupa konta:" VerticalAlignment="Top" Height="20" Width="83" RenderTransformOrigin="0.464,0.465"/>
+        <ComboBox x:Name="cmbGrupaKonta" HorizontalAlignment="Left" Margin="120,230,0,0" VerticalAlignment="Top" Width="84"/>
+        <Button x:Name="btnUnesiIzmene" Content="Izmeni" HorizontalAlignment="Left" Margin="116,308,0,0" VerticalAlignment="Top" Width="94" Height="30" Background="#FF89EBED" Click="BtnUnesiIzmene_Click"/>
+        
+
+
+    </Grid>
+</Window>

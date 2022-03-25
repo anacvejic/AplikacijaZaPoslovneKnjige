@@ -1,0 +1,46 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.Pocetna"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Početna strana" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="261*"/>
+            <ColumnDefinition Width="533*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,1,-0.4,-5" Grid.ColumnSpan="2">
+            <Image Width="800" Height="415" Source="/Image/slika.jpg" Margin="0,0,-6.4,0"/>
+        </StackPanel>
+        <Menu x:Name="menuItemFirma"  HorizontalAlignment="Left" Height="33" Margin="-2,-7,0,0" VerticalAlignment="Top" Width="47" Background="#FF4EF4EB">
+            <MenuItem x:Name="menuItemIzborFirma" Header="Firma" Background="#FF73EEF4" Height="40" Width="47">
+                <MenuItem x:Name="menuItemUnosFirme" Header="Unesi firmu" Background="#FF73EEF4" Click="MenuItemUnosFirme_Click"/>
+                <MenuItem x:Name="menuItemPregledFirmi" Header="Pregled firmi" Background="#FF73EEF4" Click="MenuItemPregledFirmi_Click"/>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="menuItemKontniOk" HorizontalAlignment="Left" Height="34" Margin="43,-7,0,0" VerticalAlignment="Top" Width="85" Background="#FF73EEF4">
+            <MenuItem x:Name="menuItemKontniOkvir" Header="Kontni okvir" Background="#FF73EEF4" Height="40" Width="85">
+                <MenuItem x:Name="menuItemKreiranjeKOntnogOkvira" Header="Kreiranje grupe konta" Background="#FF73EEF4" Click="MenuItemKreiranjeKOntnogOkvira_Click"/>
+                <MenuItem x:Name="menuItemKreiranjeKonta" Header="Kreiranje konta" Background="#FF73EEF4" Click="MenuItemKreiranjeKonta_Click"/>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="menuItemKontniPlan" HorizontalAlignment="Left" Height="34" Margin="128,-7,0,0" VerticalAlignment="Top" Width="76" Background="#FF73EEF4">
+            <MenuItem x:Name="menuItemUnosUkontniPLan" Header="Kontni plan" Background="#FF73EEF4" Click="MenuItemUnosUkontniPLan_Click" Height="39" Width="75"/>
+        </Menu>
+        <Menu x:Name="menuItemNalog" HorizontalAlignment="Left" Height="34" Margin="203,-7,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2" Background="#FF73EEF4">
+            <MenuItem x:Name="menuItemNalozi" Header="Nalog" Background="#FF73EEF4" Height="40" Width="47">
+                <MenuItem x:Name="menuItemKreirajNalog" Header="Kreiraj nalog" Background="#FF73EEF4" Click="MenuItemKreirajNalog_Click"/>
+                <MenuItem x:Name="IzmeniNalog" Header="Izmeni nalog" Background="#FF73EEF4" Click="IzmeniNalog_Click"/>
+                <MenuItem x:Name="PretraziNalog" Header="Pretraga naloga i štampanje" Background="#FF73EEF4" Click="PretraziNalog_Click"/>
+            </MenuItem>
+        </Menu>
+        <Menu x:Name="menuItemIzvod" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="0.2,-7,0,0" VerticalAlignment="Top" Width="46" Background="#FF73EEF4">
+            <MenuItem x:Name="menuItemIzvodi" Header="Izvodi" Background="#FF73EEF4" Height="40" Width="47">
+                <MenuItem x:Name="menuItemDinarskiPrometGlavneKnjige" Header="Dinarski promet glavne knjige" Background="#FF73EEF4" Click="MenuItemDinarskiPrometGlavneKnjige_Click"/>
+                <MenuItem x:Name="menuItemAnaLitickiPrometGlavneKnjige" Header="Analitički dinarski promet glavne knjige" Background="#FF73EEF4" Click="MenuItemAnaLitickiPrometGlavneKnjige_Click"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

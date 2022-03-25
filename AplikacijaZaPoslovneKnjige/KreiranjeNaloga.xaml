@@ -1,0 +1,71 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.KreiranjeNaloga"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Kreiranje naloga" Height="550.232" Width="1405.757" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,-5.2,-0.2">
+        <TextBlock x:Name="tblKreiranjeNalogaNaslov" HorizontalAlignment="Left" Margin="82,18,0,0" TextWrapping="Wrap" Text="Kreiranje naloga" VerticalAlignment="Top" Height="43" Width="362" FontSize="26" FontWeight="Bold" Foreground="#FF2138E2"/>
+        <TextBlock x:Name="tblBrojNaloga" HorizontalAlignment="Left" Margin="37,94,0,0" TextWrapping="Wrap" Text="Broj naloga:" VerticalAlignment="Top" Height="18" Width="65"/>
+        <TextBox x:Name="textBoxBrojNaloga" HorizontalAlignment="Left" Height="25" Margin="114,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+        <TextBlock x:Name="tblVrstaDokumenta" HorizontalAlignment="Left" Margin="213,98,0,0" TextWrapping="Wrap" Text="Vrsta dokumenta:" VerticalAlignment="Top" Height="19" Width="122"/>
+        <TextBox x:Name="textboxVsrtaDokumnta" HorizontalAlignment="Left" Height="25" Margin="315,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <TextBlock x:Name="tblVrstaNaloga" HorizontalAlignment="Left" Margin="39,148,0,0" TextWrapping="Wrap" Text="Vrsta naloga:" VerticalAlignment="Top" Height="20" Width="95"/>
+        <TextBox x:Name="textBoxVrstaNaloga" HorizontalAlignment="Left" Height="24" Margin="117,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+        <TextBlock x:Name="tblDatumNaloga" HorizontalAlignment="Left" Margin="214,148,0,0" TextWrapping="Wrap" Text="Datum naloga:" VerticalAlignment="Top" Height="20" Width="88"/>
+        <DatePicker x:Name="datePickerDatum" HorizontalAlignment="Left" Margin="315,145,0,0" VerticalAlignment="Top" DisplayDateStart="2020-08-14" SelectedDateChanged="DatePickerDatum_SelectedDateChanged"/>
+        <TextBlock x:Name="tblFirma" HorizontalAlignment="Left" Margin="41,190,0,0" TextWrapping="Wrap" Text="Firma:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbFirma" HorizontalAlignment="Left" Margin="114,188,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btUnesiZaglavlje" Content="Unos zaglavlja" HorizontalAlignment="Left" Margin="281,191,0,0" VerticalAlignment="Top" Width="108" Height="25" Background="#FF23EEF1" Click="BtUnesiZaglavlje_Click"/>
+        <GroupBox x:Name="groupBoxStavkeNaloga" Header="Stavke naloga" HorizontalAlignment="Left" Height="248" Margin="49,242,0,0" VerticalAlignment="Top" Width="477">
+            <Grid x:Name="gridStavkeNaloga" HorizontalAlignment="Left" Height="220" Margin="1,11,0,-5.4" VerticalAlignment="Top" Width="467">
+                <TextBlock x:Name="tblBrojNalogaBindovan" HorizontalAlignment="Left" Margin="18,21,0,0" TextWrapping="Wrap" Text="Broj naloga:" VerticalAlignment="Top" Width="68"/>
+                <TextBlock x:Name="tblKonto" HorizontalAlignment="Left" Margin="18,60,0,0" TextWrapping="Wrap" Text="Konto:" VerticalAlignment="Top" Height="19" Width="43"/>
+                <TextBox x:Name="textBoxKonto" HorizontalAlignment="Left" Height="24" Margin="139,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="71"/>
+                <TextBlock x:Name="tblOpis" HorizontalAlignment="Left" Margin="18,97,0,0" TextWrapping="Wrap" Text="Opis:" VerticalAlignment="Top" Height="19" Width="38"/>
+                <TextBox x:Name="textBoxOpis" HorizontalAlignment="Left" Height="36" Margin="76,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                <TextBlock x:Name="tblPozivnaBroj" HorizontalAlignment="Left" Margin="246,17,0,0" TextWrapping="Wrap" Text="Poziv na broj:" VerticalAlignment="Top" Height="18" Width="79"/>
+                <TextBox x:Name="textBoxPozivNaBroj" HorizontalAlignment="Left" Height="21" Margin="389,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+                <TextBlock x:Name="tblDatumValute" HorizontalAlignment="Left" Margin="246,59,0,0" TextWrapping="Wrap" Text="Datum valute:
+                           " VerticalAlignment="Top" Height="18" Width="77"/>
+                <DatePicker x:Name="datePicerStavkaNaloga" HorizontalAlignment="Left" Margin="341,54,0,0" VerticalAlignment="Top" Height="23" Width="103" SelectedDateChanged="DatePicerStavkaNaloga_SelectedDateChanged"/>
+                <TextBlock x:Name="tblDuhuje" HorizontalAlignment="Left" Margin="20,155,0,0" TextWrapping="Wrap" Text="Duguje: " VerticalAlignment="Top" Height="20" Width="44"/>
+                <TextBox x:Name="textboxDuguje" HorizontalAlignment="Left" Height="23" Margin="94,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+                <TextBlock x:Name="tblPotrazuje" HorizontalAlignment="Left" Margin="246,156,0,0" TextWrapping="Wrap" Text="Potražuje:" VerticalAlignment="Top" Width="62"/>
+                <TextBox x:Name="textBoxPotrazuje" HorizontalAlignment="Left" Height="22" Margin="315,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+                <TextBlock x:Name="tblKomada" HorizontalAlignment="Left" Margin="247,102,0,0" TextWrapping="Wrap" Text="Komada:" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxKomada" HorizontalAlignment="Left" Height="23" Margin="392,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+                <Button x:Name="btnUnesiStavkeNaloga" Content="Zapamti nalog" HorizontalAlignment="Left" Margin="167,190,0,0" VerticalAlignment="Top" Width="85" Background="#FF4FEBD2" Click="BtnUnesiStavkeNaloga_Click"/>
+                <TextBox x:Name="textBoxBrojNalogaBajdovan" HorizontalAlignment="Left" Height="25" Margin="142,18,0,0" TextWrapping="Wrap" Text="{Binding ElementName=textBoxBrojNaloga, Path=Text,Mode=OneWay}" VerticalAlignment="Top" Width="64" IsReadOnly="True"/>
+
+
+
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btnPregledStavkaNaloga" Content="Pogledaj unete stavke naloga" HorizontalAlignment="Left" Margin="807,21,0,0" VerticalAlignment="Top" Width="189" Height="32" Click="BtnPregledStavkaNaloga_Click" Background="#FF5CEDDA"/>
+        <DataGrid x:Name="dataGridStavkeNaloga" HorizontalAlignment="Left" Height="256" Margin="570,86,0,0" VerticalAlignment="Top" Width="763" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Broj naloga" Binding="{Binding BrojNaloga}" Width="70"/>
+                <DataGridTextColumn Header="Konto" Binding="{Binding Konto}" Width="70"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="180"/>
+                <DataGridTextColumn Header="Poziv na broj" Binding="{Binding PozivNaBroj}" Width="80"/>
+                <DataGridTextColumn Header="Datum valute" Binding="{Binding DatumValute}" Width="80"/>
+                <DataGridTextColumn Header="Duguje" Binding="{Binding Duguje}" Width="110"/>
+                <DataGridTextColumn Header="Potrazuje" Binding="{Binding Potrazuje}" Width="110"/>
+                <DataGridTextColumn Header="Komada" Binding="{Binding Komada}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnUkupno" Content="Ukupno" HorizontalAlignment="Left" Margin="859,370,0,0" VerticalAlignment="Top" Width="123" Height="26" Background="#FFC5F6F3" Click="BtnUkupno_Click"/>
+        <TextBox x:Name="textBoxDugujeUkupno" HorizontalAlignment="Left" Height="20" Margin="1053,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" IsReadOnly="True"/>
+        <TextBox x:Name="textBoxSaldo" HorizontalAlignment="Left" Height="28" Margin="1046,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" IsReadOnly="True"/>
+        <TextBox x:Name="textBoxUkupnoPotrazuje" HorizontalAlignment="Left" Height="20" Margin="1172,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" IsReadOnly="True"/>
+        <TextBlock x:Name="tblSaldo" HorizontalAlignment="Left" Margin="928,430,0,0" TextWrapping="Wrap" Text="Saldo:" VerticalAlignment="Top" Height="35" Width="121" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="btnStampaj" Content="Štampaj" HorizontalAlignment="Left" Margin="572,373,0,0" VerticalAlignment="Top" Width="96" Height="26" Click="BtnStampaj_Click" Background="#FFC0F6F7"/>
+
+
+
+
+    </Grid>
+</Window>

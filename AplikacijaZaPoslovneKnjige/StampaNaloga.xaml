@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="AplikacijaZaPoslovneKnjige.StampaNaloga"
+        mc:Ignorable="d"
+        Title="StampaNaloga" Height="511.127" Width="995.087">
+    <Grid>
+
+        <Viewer:CrystalReportsViewer x:Name="crStampaNaloga" HorizontalAlignment="Left" Height="475" Margin="5,4,0,0" VerticalAlignment="Top" Width="982"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+; Field definition file for table: ADORecordset
+Firma	string	30	string sample value
+Konto	string	8	string sample value
+Naziv	string	100	string sample value
+TekuceDuguje	number		1.00
+TekucePotrazuje	number		1.00
+PocetnoDuguje	number		1.00
+PocetnoPotrazuje	number		1.00
+DatumOd	date		Jan 5, 1994
+DatumDo	date		Jan 5, 199

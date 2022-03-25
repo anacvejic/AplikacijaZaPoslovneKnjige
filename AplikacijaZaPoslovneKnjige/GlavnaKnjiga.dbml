@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GlavnaKnjiga" Class="GlavnaKnjigaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=GlavnaKnjiga;Integrated Security=True" SettingsObjectName="AplikacijaZaPoslovneKnjige.Properties.Settings" SettingsPropertyName="GlavnaKnjigaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Firma" Member="Firmas">
+    <Type Name="Firma">
+      <Column Name="IdFirma" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefon" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UserNameUneo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Firma_KontniPlan" Member="KontniPlans" ThisKey="IdFirma" OtherKey="IdFirma" Type="KontniPlan" />
+      <Association Name="Firma_Nalog" Member="Nalogs" ThisKey="IdFirma" OtherKey="IdFirma" Type="Nalog" />
+      <Association Name="Korisnik_Firma" Member="Korisnik" ThisKey="UserNameUneo" OtherKey="UserName" Type="Korisnik" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GrupaKonta" Member="GrupaKontas">
+    <Type Name="GrupaKonta">
+      <Column Name="Grupa" Type="System.String" DbType="NVarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NazivGrupa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Klasa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="GrupaKonta_Konta" Member="Kontas" ThisKey="Grupa" OtherKey="Grupa" Type="Konta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Konta" Member="Kontas">
+    <Type Name="Konta">
+      <Column Name="SifraKonta" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OpisKonta" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Grupa" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="Konta_KontniPlan" Member="KontniPlans" ThisKey="SifraKonta" OtherKey="SifraKonta" Type="KontniPlan" />
+      <Association Name="GrupaKonta_Konta" Member="GrupaKonta" ThisKey="Grupa" OtherKey="Grupa" Type="GrupaKonta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KontniPlan" Member="KontniPlans">
+    <Type Name="KontniPlan">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SifraKonta" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="IdentifikacioniBroj" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdFirma" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Firma_KontniPlan" Member="Firma" ThisKey="IdFirma" OtherKey="IdFirma" Type="Firma" IsForeignKey="true" />
+      <Association Name="Konta_KontniPlan" Member="Konta" ThisKey="SifraKonta" OtherKey="SifraKonta" Type="Konta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Korisnik" Member="Korisniks">
+    <Type Name="Korisnik">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Korisnik_Firma" Member="Firmas" ThisKey="UserName" OtherKey="UserNameUneo" Type="Firma" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nalog" Member="Nalogs">
+    <Type Name="Nalog">
+      <Column Name="IdNalog" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BrojNaloga" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="VrstaDokumenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VrstaNaloga" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DatumNaloga" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IdFirma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Nalog_StavkaNaloga" Member="StavkaNalogas" ThisKey="IdNalog" OtherKey="IdNalog" Type="StavkaNaloga" />
+      <Association Name="Firma_Nalog" Member="Firma" ThisKey="IdFirma" OtherKey="IdFirma" Type="Firma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StavkaNaloga" Member="StavkaNalogas">
+    <Type Name="StavkaNaloga">
+      <Column Name="IdStavka" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdNalog" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Konto" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PozivNaBroj" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="DatumValute" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Duguje" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Potrazuje" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Komada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Nalog_StavkaNaloga" Member="Nalog" ThisKey="IdNalog" OtherKey="IdNalog" Type="Nalog" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

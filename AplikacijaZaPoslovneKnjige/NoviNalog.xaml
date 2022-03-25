@@ -1,0 +1,88 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.NoviNalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Nalog" Height="662.4" Width="1421.6" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox x:Name="grpZaglavlje" Header="Zaglavlje naloga" HorizontalAlignment="Left" Height="158" Margin="34,143,0,0" VerticalAlignment="Top" Width="429">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="389*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="tblBrojNaloga" HorizontalAlignment="Left" Margin="23,19,0,0" TextWrapping="Wrap" Text="Broj naloga:" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="tblVrstaNaloga" HorizontalAlignment="Left" Margin="25,56,0,0" TextWrapping="Wrap" Text="Vrsta naloga:" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.721" Height="19" Width="78" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="textBoxBrojNaloga" Text="{Binding ElementName=dgvZaglavljeNaloga,Path=SelectedItem.BrojNaloga,Mode=OneWay}" HorizontalAlignment="Left" Height="24" Margin="108.1,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Grid.Column="1" IsEnabled="False"/>
+                <TextBox x:Name="textBoxVrstaNaloga" Text="{Binding ElementName=dgvZaglavljeNaloga,Path=SelectedItem.VrstaNaloga, Mode=OneWay}" HorizontalAlignment="Left" Height="22" Margin="109.1,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Grid.Column="1"/>
+                <TextBlock x:Name="tblFirma" HorizontalAlignment="Left" Margin="1.1,92,0,0" TextWrapping="Wrap" Text="Firma:" VerticalAlignment="Top" Grid.Column="1"/>
+                <ComboBox x:Name="cmbFirma" HorizontalAlignment="Left" Margin="46.1,87,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                <TextBlock x:Name="tblVrstaDokumenta" HorizontalAlignment="Left" Margin="177.1,20,0,0" TextWrapping="Wrap" Text="Vrsta dokumenta:" VerticalAlignment="Top" Height="19" Width="94" Grid.Column="1"/>
+                <TextBox x:Name="textBoxVrstaDokumenta" Text="{Binding ElementName=dgvZaglavljeNaloga,Path=SelectedItem.VrstaDokumenta,Mode=OneWay}" HorizontalAlignment="Left" Height="20" Margin="314.1,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Grid.Column="1"/>
+                <TextBlock x:Name="tblDatumNaloga" HorizontalAlignment="Left" Margin="178.1,53,0,0" TextWrapping="Wrap" Text="Datum naloga:" VerticalAlignment="Top" Height="22" Width="80" Grid.Column="1"/>
+                <DatePicker x:Name="datePickerDatumNaloga" Text="{Binding ElementName=dgvZaglavljeNaloga,Path=SelectedItem.DatumNaloga,Mode=OneWay}" HorizontalAlignment="Left" Margin="267.1,49,0,0" VerticalAlignment="Top" DisplayDateStart="1/01/2020" DisplayDateEnd="12/31/2020" SelectedDateChanged="DatePickerDatumNaloga_SelectedDateChanged" Grid.Column="1"/>
+                <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="272.1,87,0,0" VerticalAlignment="Top" Width="96" Background="#FFAEF9FA" Height="23" Click="BtnIzmeni_Click" Grid.Column="1"/>
+            </Grid>
+        </GroupBox>
+        <DataGrid x:Name="dgvZaglavljeNaloga" x:FieldModifier="public" HorizontalAlignment="Left" Height="155" Margin="491,151,0,0" VerticalAlignment="Top" Width="479" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID nalog" Binding="{Binding IdNalog}" Width="70"/>
+                <DataGridTextColumn Header="Broj naloga" Binding="{Binding BrojNaloga}" Width="70"/>
+                <DataGridTextColumn Header="Vrsta dokumenta" Binding="{Binding VrstaDokumenta}" Width="180"/>
+                <DataGridTextColumn Header="Vrsta naloga" Binding="{Binding VrstaNaloga}" Width="80"/>
+                <DataGridTextColumn Header="Datum naloga" Binding="{Binding DatumNaloga}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="tlbSifra" HorizontalAlignment="Left" Margin="1014,158,0,0" TextWrapping="Wrap" Text="Šifra:" VerticalAlignment="Top" Height="17" Width="66" FontSize="14"/>
+        <TextBox x:Name="textBoxSifra" HorizontalAlignment="Left" Height="24" Margin="1020,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="tlbNaslov" HorizontalAlignment="Left" Margin="587,43,0,0" TextWrapping="Wrap" Text="Izmena i pregled naloga:" VerticalAlignment="Top" FontSize="30" Foreground="#FF0E10D9" FontStyle="Italic" FontWeight="Bold" Height="61" Width="379"/>
+        <Button x:Name="btnPretrazi" Content="Pretarzi" HorizontalAlignment="Left" Margin="1237,162,0,0" VerticalAlignment="Top" Width="122" Height="32" Background="#FFABF4F3" Click="BtnPretrazi_Click" RenderTransformOrigin="0.669,0.578"/>
+        <TextBlock x:Name="tlbNazivFirme" HorizontalAlignment="Left" Margin="1023,244,0,0" TextWrapping="Wrap" Text="Naziv firme:" VerticalAlignment="Top" Height="23" Width="95" FontSize="14" RenderTransformOrigin="0.842,0.474"/>
+        <ComboBox x:Name="cmbNazivFirme" HorizontalAlignment="Left" Margin="1022,280,0,0" VerticalAlignment="Top" Width="190"/>
+
+        <DataGrid x:Name="dgvStavkeNaloga" HorizontalAlignment="Left" Height="234" Margin="41,363,0,0" VerticalAlignment="Top" Width="751" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id stavka" Binding="{Binding IdStavka}" Width="70"/>
+                <DataGridTextColumn Header="Konto" Binding="{Binding Konto}" Width="70"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="180"/>
+                <DataGridTextColumn Header="Poziv na broj" Binding="{Binding PozivNaBroj}" Width="80"/>
+                <DataGridTextColumn Header="Datum valute" Binding="{Binding DatumValute}" Width="90"/>
+                <DataGridTextColumn Header="Duguje" Binding="{Binding Duguje}" Width="100"/>
+                <DataGridTextColumn Header="Potrazuje" Binding="{Binding Potrazuje}" Width="100"/>
+                <DataGridTextColumn Header="Komada" Binding="{Binding Komada}" Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="textBoxIdNalog" HorizontalAlignment="Left" Height="23" Margin="265,249,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvZaglavljeNaloga,Path=SelectedItem.IdNalog,Mode=OneWay}" VerticalAlignment="Top" Width="55" IsEnabled="False" Visibility="Hidden"/>
+        <GroupBox x:Name="gbStavkeNaloga" Header="GroupBox" HorizontalAlignment="Left" Height="263" Margin="821,337,0,0" VerticalAlignment="Top" Width="543">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="17*"/>
+                    <ColumnDefinition Width="132*"/>
+                    <ColumnDefinition Width="105*"/>
+                    <ColumnDefinition Width="249*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="tblKonto" HorizontalAlignment="Left" Margin="8.726,23,0,0" TextWrapping="Wrap" Text="Konto:" VerticalAlignment="Top" Height="23" Width="39" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <TextBox x:Name="textBoxKonto" HorizontalAlignment="Left" Height="23" Margin="23.2,18,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga, Path=SelectedItem.Konto, Mode=OneWay}" VerticalAlignment="Top" Width="60" Grid.Column="4"/>
+                <TextBlock x:Name="tblOpis" HorizontalAlignment="Left" Margin="6.726,63,0,0" TextWrapping="Wrap" Text="Opis:" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <TextBox x:Name="textBoxOpis" HorizontalAlignment="Left" Height="40" Margin="37.2,50,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga, Path=SelectedItem.Opis, Mode=OneWay}" VerticalAlignment="Top" Width="180" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" HorizontalScrollBarVisibility="Visible" Grid.Column="3" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="tblPozivNaBroj" HorizontalAlignment="Left" Margin="9.726,109,0,0" TextWrapping="Wrap" Text="Poziv na broj:" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <TextBox x:Name="textBoxPozivNaBroj" HorizontalAlignment="Left" Height="26" Margin="30.2,100,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga, Path=SelectedItem.PozivNaBroj,Mode=OneWay}" VerticalAlignment="Top" Width="55" Grid.Column="4"/>
+                <TextBlock x:Name="tblDatumValute" HorizontalAlignment="Left" Margin="1,150,0,0" TextWrapping="Wrap" Text="Datum valute:" VerticalAlignment="Top" Height="17" Width="62" Grid.Column="2" Grid.ColumnSpan="2"/>
+                <DatePicker x:Name="datePicerStavkaNaloga" Text="{Binding ElementName=dgvStavkeNaloga, Path=SelectedItem.DatumValute, Mode=OneWay}" HorizontalAlignment="Left"  Margin="62.2,148,0,0" VerticalAlignment="Top" Height="26" Width="155" SelectedDateChanged="DataPickerStavkeNaloga_SelectedDateChanged" Grid.Column="3" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="tblDuguje" HorizontalAlignment="Left" Margin="0,199,0,0" TextWrapping="Wrap" Text="Duguje:" VerticalAlignment="Top" Height="20" Width="48" Grid.Column="2" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="textBoxDuguje" HorizontalAlignment="Left" Height="30" Margin="70.2,193,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga, Path=SelectedItem.Duguje,Mode=OneWay}" VerticalAlignment="Top" Width="142" Grid.Column="3" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="tblPotrazuje" HorizontalAlignment="Left" Margin="13.4,200,0,0" TextWrapping="Wrap" Text="Potražuje:" VerticalAlignment="Top" Grid.Column="5"/>
+                <TextBox x:Name="textBoxPotrazuje" HorizontalAlignment="Left" Height="28" Margin="80.4,196,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga,Path=SelectedItem.Potrazuje,Mode=OneWay}" VerticalAlignment="Top" Width="151" Grid.Column="5"/>
+                <TextBlock x:Name="tblKomada" HorizontalAlignment="Left" Margin="19.4,160,0,0" TextWrapping="Wrap" Text="Komada:" VerticalAlignment="Top" Grid.Column="5"/>
+                <TextBox x:Name="textBoxKomada" HorizontalAlignment="Left" Height="23" Margin="169.4,159,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga, Path=SelectedItem.Komada,Mode=OneWay}" VerticalAlignment="Top" Width="59" Grid.Column="5"/>
+                <Button x:Name="btnIzmeniStavku" Content="Izmeni stavku" HorizontalAlignment="Left" Margin="104.4,25,0,0" VerticalAlignment="Top" Width="117" Height="28" Background="#FFA1F6F7" Click="BtnIzmeniStavku_Click" Grid.Column="5"/>
+                <TextBox x:Name="textBoxIdStavka" Grid.Column="5" HorizontalAlignment="Left" Height="24" Margin="158.4,84,0,0" TextWrapping="Wrap" Text="{Binding ElementName=dgvStavkeNaloga,Path=SelectedItem.IdStavka,Mode=OneWay}" VerticalAlignment="Top" Width="60" Visibility="Hidden"/>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.Kontni_plan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Kontni plan" Height="463.678" Width="1006.535" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <DataGrid x:Name="dataGridKreiranjeKonta" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id konta" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Šifra" Binding="{Binding SifraKonta}"/>
+                <DataGridTextColumn Header="Indetifikacioni broj" Binding="{Binding IdentifikacioniBroj}"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}"/>
+                <DataGridTextColumn Header="ID Firme" Binding="{Binding IdFirma}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Izbor operacija"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnUnesiKonto" Content="Unos novog" Click="BtnUnesiKonto_Click"/>
+                                <Button x:Name="btnIzmeniKonto" Content="Izmena konta" Click="BtnIzmeniKonto_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

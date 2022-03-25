@@ -1,0 +1,34 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.KreiranjeKontnogOkvira"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Kreiranje grupe konta" Height="450" Width="818.793" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <DataGrid x:Name="dataGridKreiranjeGrupeKonta" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Šifra grupe" Binding="{Binding Grupa}"/>
+                <DataGridTextColumn Header="Naziv grupe" Binding="{Binding NazivGrupa}"/>
+                <DataGridTextColumn Header="Klasa" Binding="{Binding Klasa}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Izbor operacija"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnUnesiGrupu" Content="Unos novog" Click="BtnUnesiGrupu_Click"/>
+                                <Button x:Name="btnIzmeniGrupu" Content="Izmeni" Click="BtnIzmeniGrupu_Click"/>
+                                <Button x:Name="btnObrisiGrupu" Content="Obriši" Click="BtnObrisiGrupu_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

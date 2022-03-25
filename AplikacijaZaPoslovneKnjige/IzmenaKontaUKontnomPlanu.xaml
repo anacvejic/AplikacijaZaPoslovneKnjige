@@ -1,0 +1,23 @@
+﻿<Window x:Class="AplikacijaZaPoslovneKnjige.IzmenaKontaUKontnomPlanu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplikacijaZaPoslovneKnjige"
+        mc:Ignorable="d"
+        Title="Izmena konta u kontnom planu" Height="450" Width="460.673" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock x:Name="tblIzmenaKontaUkontnomPLanuNaslov" HorizontalAlignment="Left" Margin="52,35,0,0" TextWrapping="Wrap" Text="Izmena konta u kontnom planu" VerticalAlignment="Top" FontSize="23" FontWeight="Bold" Foreground="#FF2A25D9"/>
+        <TextBlock x:Name="tblSifraKonta" HorizontalAlignment="Left" Margin="187,88,0,0" TextWrapping="Wrap" Text="Šifra konta:" VerticalAlignment="Top" Height="24" Width="87"/>
+        <ComboBox x:Name="cmbSifraKonta" HorizontalAlignment="Left" Margin="165,110,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="CmbSifraKonta_SelectionChanged"/>
+        <TextBlock x:Name="tblIdentifikacioniBroj" HorizontalAlignment="Left" Margin="175,155,0,0" TextWrapping="Wrap" Text="Indetifikacioni broj:" VerticalAlignment="Top" Height="26" Width="116"/>
+        <TextBox x:Name="textBoxIndetifikacioniBroj" HorizontalAlignment="Left" Height="21" Margin="188,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <TextBlock x:Name="tblOpis" HorizontalAlignment="Left" Margin="206,213,0,0" TextWrapping="Wrap" Text="Opis:" VerticalAlignment="Top" Height="21" Width="40"/>
+        <ComboBox x:Name="cmbOpis" HorizontalAlignment="Left" Margin="126,235,0,0" VerticalAlignment="Top" Width="185" Height="28"/>
+        <TextBlock x:Name="tblNazivFirme" HorizontalAlignment="Left" Margin="191,281,0,0" TextWrapping="Wrap" Text="NazivFirme:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbNazivFirme" HorizontalAlignment="Left" Margin="130,301,0,0" VerticalAlignment="Top" Width="181" Height="26"/>
+        <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Left" Margin="166,356,0,0" VerticalAlignment="Top" Width="102" Height="29" Background="#FF93F6E6" Click="BtnIzmeni_Click"/>
+       
+
+    </Grid>
+</Window>
